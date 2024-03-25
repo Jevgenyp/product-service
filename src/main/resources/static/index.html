@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Fellow Products</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-$END$
+<div id="navigation">
+    <a href="/contacts">Contacts</a> |
+    <a href="/products">Products</a> |
+    <a href="/messages">Messages</a> |
+    <a href="/stock">Stock</a> |
+    <a href="/profile">Profile</a> |
+    <a href="http://localhost:8080/chat/" target="_blank">Chat Assistant AI</a>
+</div>
+<div id="header">
+    <h1>SUPPLY FELLOW</h1>
+</div>
+<div id="productForm">
+    <input type="text" id="productName" placeholder="Product Name"/>
+    <input type="text" id="productClass" placeholder="Class"/>
+    <input type="text" id="productType" placeholder="Type"/>
+    <input type="number" id="productPrice" placeholder="Price"/>
+    <input type="number" id="productQuantity" placeholder="Quantity (kg)"/>
+    <button id="addProductBtn">Add Product</button>
+</div>
+<ul id="productList"></ul>
+
+<!-- Chat Overlay -->
+<div id="chat-overlay">
+    <div id="chat-header">Chat with us!</div>
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Type your message...">
+    <button id="sendChatBtn">Send</button>
+</div>
+<button id="toggleChatBtn">Chat</button>
+
+<script src="script.js"></script>
 </body>
 </html>

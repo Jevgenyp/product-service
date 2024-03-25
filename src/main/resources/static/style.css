@@ -1,58 +1,76 @@
-body {
+body, html {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
 }
 
-.form-container {
-    margin-bottom: 20px;
-}
-
-form#addProductForm {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-form#addProductForm h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-form#addProductForm input,
-form#addProductForm button {
-    width: 100%;
+#navigation {
+    background-color: #007bff;
     padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-form#addProductForm button {
-    background-color: #5cb85c;
+#navigation a {
     color: white;
-    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#productForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#productForm input, #productForm button, #toggleChatBtn, #sendChatBtn {
+    margin: 5px;
+    padding: 10px;
+    min-width: 150px;
+}
+
+#productList li {
+    background-color: #e9ecef;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+}
+
+#chat-overlay, #chat-header, #chat-messages, #chat-input {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+#toggleChatBtn, #sendChatBtn {
+    background-color: #007bff;
+    color: white;
     border: none;
+    cursor: pointer;
 }
 
-form#addProductForm button:hover {
-    background-color: #4cae4c;
+#chat-overlay {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    width: 250px;
+    height: 300px;
+    background-color: white;
+    z-index: 1000;
+    display: none; /* Initially hidden */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-th {
-    background-color: #f2f2f2;
+#chat-messages {
+    overflow-y: auto;
+    height: 180px;
+    background-color: #f9f9f9;
 }

@@ -1,10 +1,19 @@
-spring.application.name=product-service
-spring.datasource.url=jdbc:postgresql://localhost:5433/productdb
-spring.datasource.username=yourUsername
-spring.datasource.password=yourPassword
+server:
+  port: 8082 # Ensure this port is different from others
 
-spring.jpa.hibernate.ddl-auto=update
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/productdb
+    username: yourUsername
+    password: yourPassword
+  jpa:
+    hibernate:
+      ddl-auto: update
 
-
-eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
-eureka.client.register-with-eureka=true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
