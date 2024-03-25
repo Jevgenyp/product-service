@@ -2,6 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchProducts();
     setupEventListeners();
 });
+async function fetchProducts() {
+    try {
+        const response = await fetch('/products');
+        const data = await response.json();
+        displayProducts(data);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        displayFetchError();
+    }
+}
+
+function displayFetchError() {
+    const productList = document.getElementById('productList');
+    productList.innerHTML = `<li>Error loading products. Please try again later.</li>`;
+}
 
 function setupEventListeners() {
     document.getElementById('addProductBtn').addEventListener('click', addProduct);
@@ -16,12 +31,7 @@ function setupEventListeners() {
     document.getElementById('chat-assistant-ai').addEventListener('click', openChatAssistant);
 }
 
-function fetchProducts() {
-    fetch('/products')
-        .then(response => response.json())
-        .then(displayProducts)
-        .catch(error => console.error('Error fetching products:', error));
-}
+
 
 function displayProducts(data) {
     const productList = document.getElementById('productList');
